@@ -4,7 +4,7 @@ from utils.mass import calc_cube_mass
 
 
 # Create logger instance
-logger = logging.getLogger(__name__)
+logger = logging.getLogger()
 
 # Configure logger instance
 stream_handler = logging.StreamHandler(stdout)
