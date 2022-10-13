@@ -3,7 +3,6 @@ import logging
 from .volume import calc_cube_volume
 
 logger = logging.getLogger(__name__)
-logger.info("inside mass")
 
 
 def calc_cube_mass(sides_cm: float, density: float) -> float:
