@@ -2,7 +2,7 @@ import logging
 
 from .volume import calc_cube_volume
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(f"root.{__name__}")
 
 
 def calc_cube_mass(sides_cm: float, density: float) -> float:

@@ -1,6 +1,6 @@
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(f"root.{__name__}")
 
 
 def calc_cube_volume(sides: float) -> float:
