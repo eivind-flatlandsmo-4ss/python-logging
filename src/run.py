@@ -4,7 +4,7 @@ from utils.mass import calc_cube_mass
 
 
 # Create logger instance
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("root")
 
 # Configure logger instance
 stream_handler = logging.StreamHandler(stdout)
@@ -16,8 +16,11 @@ logger.setLevel("DEBUG")
 
 def main():
     logger.info("Start calculating. ")
-    calc_cube_mass(sides_cm=10, density=1.0)
+    mass = calc_cube_mass(sides_cm=10, density=1.0)
     logger.info("Finished calculating.")
+    logger.info(f"The calculated mass is: {mass} grams.")
+
+    return mass
 
 
 if __name__ == "__main__":
