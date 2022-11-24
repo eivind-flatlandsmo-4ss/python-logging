@@ -4,9 +4,6 @@ from sub1 import sub1funcs
 
 logger = logging.getLogger(__name__) 
 logger.info("Sibling global scope") # Is this logged on 'import sibling' in run.py? 
-# No. The 'logger' object is by default set to WARNING. 
-# But! If the import statement 'import sibling' is located after setting the 
-# the logger lever to "DEBUG", than this will be logged to console.
 
 
 def divide_nrs(x, y):
@@ -23,6 +20,8 @@ def add_nr_var_not_defined():
         y = 10
         return x + y
     except Exception as e:
-        logger.exception(e)
+        logger.exception(e) #This is how you capture the traceback. 
+        # With a fileHandler configured to write to a file the traceback is 
+        # stored after execution. 
 
 sub1funcs.multiply_nrs(10, 2)
