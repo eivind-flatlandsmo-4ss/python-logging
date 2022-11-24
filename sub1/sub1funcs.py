@@ -1,19 +1,16 @@
 import logging
 from sys import stdout
 
+from .sub2 import sub2funcs #This is a way to do relative imports
 
-logger = logging.getLogger(f"app.{__name__}")
-print(logger)
-
-logger.info(f"THis is info from {__file__}.py")
+logger = logging.getLogger(__name__)
+logger.info(f"Global scope in {__name__}.py")
 
 
 def multiply_nrs(x, y):
-    logger.info(
-        "Called inside of func, after logger in main has set its level to debug. "
-    )
+    logger.info(f"Local scope in multiply_nrs")
     product = x * y
-    logger.debug(f"Multiply nrs: {product}")
+    logger.debug(f"Local scope in multiply_nrs: {product}")
+    return product
 
-
-add_nrs(1, 2)
+sub2funcs.add_nrs(1, 2)
